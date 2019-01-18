@@ -1,10 +1,10 @@
 # Team "manshion_brothers"
 ## 構成
-[data]: train/testのcsv
-[data/submit/]: 提出用予測結果（ファイル名にタイムスタンプがつくようにしてあります）
-[jnb]: jupyter上でのファイルなど
-[memo]: train_set.csvをEDAしてるxlsx、他雑多なメモ
-[prog]: mainや前処理などをモジュール化したくなったら使う予定のフォルダ（今は何も入ってないです）
+data: train/testのcsv
+data/submit/: 提出用予測結果（ファイル名にタイムスタンプがつくようにしてあります）
+jnb: jupyter上でのファイルなど
+memo: train_set.csvをEDAしてるxlsx、他雑多なメモ
+prog: mainや前処理などをモジュール化したくなったら使う予定のフォルダ（今は何も入ってないです）
 
 
 ## リンク
