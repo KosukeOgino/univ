@@ -68,8 +68,8 @@ class ManshionBrothers:
     def evaluate(self, y, y_pred):
         mse = mean_squared_error(y, y_pred)
         msle = mean_squared_log_error(y, y_pred)
-        print("MSE :", mse)
-        print("MSLE:", msle)
+        print("MSE  :", mse)
+        print("MSLE :", msle)
         return mse, msle
 
 

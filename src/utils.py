@@ -2,6 +2,8 @@
 
 import pandas as pd
 
+from sklearn.model_selection import train_test_split
+
 R_SEED = 1234
 
 
@@ -50,15 +52,18 @@ class DataPreprocessor:
         self.x_train = self.train_org.iloc[:, :-1]
         self.y_train = self.train_org["PRICE"]
 
-        self.x_test = self.test_org.iloc[:, :-1]
+        self.x_test = self.test_org.copy()
 
     def extract_columns(self):
         self.x_train = self.x_train[self.num_cols + self.cat_cols]
         self.x_test = self.x_test[self.num_cols + self.cat_cols]
 
     def dummy_encoding(self):
+        if len(self.cat_cols)==0:
+            return
+
         x_tmp = pd.concat([self.x_train, self.x_test], axis=0)
-        x_tmp = pd.concat([x_tmp, pd.get_dummies(x_tmp[self.cat_cols])], axis=1)
+        x_tmp = pd.concat([x_tmp[self.num_cols], pd.get_dummies(x_tmp[self.cat_cols])], axis=1)
 
         self.x_train = x_tmp.iloc[:self.x_train.shape[0], :]
         self.x_test = x_tmp.iloc[self.x_train.shape[0]:, :]
