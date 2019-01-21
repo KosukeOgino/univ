@@ -1,0 +1,25 @@
+# メモ
+## 1/12
+### やったこと
+とりあえずXGBでやってみた
+
+### 今後の方針
+1. 異常値の補正など
+2. 「SOURCE」のcondominiumとresidentialでモデルを分ける
+3. STREET名を使う
+
+# submit log
+## v1
+とりあえずサブミットしてみたやつ
+num_var = ["AYB","GBA"]
+cat_var = ["GRADE", "ASSESSMENT_NBHD"]
+
+## v2
+暇だから計算させてみたやつ
+num_var = ["AYB","GBA","ROOMS","LANDAREA"]
+cat_var = ["GRADE", "ASSESSMENT_NBHD", "STYLE"]
+
+## v3
+寄与率が高いやつをいれてみたやつ
+num_var = ["BATHRM", "EYB", "LONGITUDE", "FIREPLACES", "SALE_NUM", "CMPLX_NUM", "CENSUS_TRACT", "LIVING_GBA"]
+cat_var = ["QUADRANT", "CNDTN", "WARD", "AC", "QUALIFIED"]
