@@ -1,5 +1,7 @@
 # coding:utf-8
 
+from datetime import datetime as dt
+
 import pandas as pd
 
 from sklearn.model_selection import train_test_split
@@ -68,6 +70,9 @@ class DataPreprocessor:
         self.x_train = x_tmp.iloc[:self.x_train.shape[0], :]
         self.x_test = x_tmp.iloc[self.x_train.shape[0]:, :]
 
+    def treat_outliers(self):
+        pass
+
     def fill_missing_vals(self):
         pass
 
@@ -75,6 +80,23 @@ class DataPreprocessor:
         pass
 
     ## -------------------------------------------------- ##
+
+
+
+class Postprocessor:
+    def __init__(self):
+        pass
+
+    @classmethod
+    def make_submit_csv(cls, y_pred, df_test, save_path=None):
+        df_submit = pd.DataFrame(y_pred, index=df_test.index, columns=["PRICE"])
+
+        if save_path != None:
+            fn = dt.now().strftime("%Y%m%d_%H%M%S") + ".csv"
+            df_submit.to_csv(save_path + fn, header=True, index_label="Id")
+
+        return df_submit
+
 
 
 if __name__ == "__main__":

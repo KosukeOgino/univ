@@ -65,7 +65,7 @@ class ManshionBrothers:
 
         return result / sum(model_weights)
 
-    def evaluate(self, y, y_pred):
+    def evaluate(self, y_pred, y):
         mse = mean_squared_error(y, y_pred)
         msle = mean_squared_log_error(y, y_pred)
         print("MSE  :", mse)
